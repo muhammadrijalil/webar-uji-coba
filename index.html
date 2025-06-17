@@ -1,81 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>AR Airdrop</title>
-    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@latest/dist/mindar-image-aframe.prod.js"></script>
-    <style>
-      body { margin: 0; overflow: hidden; }
-      #ar-container { width: 100vw; height: 100vh; }
-    </style>
-  </head>
-  <body>
-    <div id="ar-container">
-      <a-scene
-        mindar-image="imageTargetSrc: ./targets.mind;"
-        embedded
-        color-space="sRGB"
-        vr-mode-ui="enabled: false"
-        device-orientation-permission-ui="enabled: false"
-        renderer="colorManagement: true, physicallyCorrectLights">
-
-        <a-assets>
-          <a-asset-item id="model" src="./airdrop.glb"></a-asset-item>
-        </a-assets>
-
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-        <a-entity mindar-image-target="targetIndex: 0">
-          <a-gltf-model src="#model" position="0 0 0" scale="0.2 0.2 0.2"></a-gltf-model>
-        </a-entity>
-
-      </a-scene>
-    </div>
-  </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>WebAR Airdrop</title>
-    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@latest/dist/mindar-image-aframe.prod.js"></script>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-      canvas {
-        position: absolute;
-      }
-    </style>
-  </head>
-  <body>
-    <a-scene
-      mindar-image="imageTargetSrc: ./targets.mind;"
-      embedded
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-    >
-      <a-assets>
-        <!-- Ganti dengan file modelmu -->
-        <a-asset-item id="model" src="airdrop.glb"></a-asset-item>
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-      <a-entity mindar-image-target="targetIndex: 0">
-        <!-- Tampilkan model 3D saat marker dikenali -->
-        <a-gltf-model
-          src="#model"
-          position="0 0 -5"
-          scale="0.001 0.001 0.001"
-          rotation="0 0 0"
-        ></a-gltf-model>
-      </a-entity>
-    </a-scene>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belajar Gerbang Logika</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Media Pembelajaran Gerbang Logika</h1>
+  <p>Klik tombol di bawah ini untuk memulai pemindaian marker.</p>
+  <button onclick="window.location.href='ar.html'">Mulai Scan</button>
+</body>
 </html>
